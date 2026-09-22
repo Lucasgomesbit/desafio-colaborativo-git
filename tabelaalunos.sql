@@ -1,6 +1,7 @@
 -- create a table
-CREATE TABLE alunos (
+CREATE TABLE int alunos (
   id_aluno PRIMARY KEY,
-  name VACHAR(100),
-  email VACHAR(100)
+  nome VACHAR(100),
+  email VACHAR(100),
+  curso varchar(100) not null
 );
