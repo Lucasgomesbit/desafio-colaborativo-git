@@ -1,0 +1,43 @@
+CREATE TABLE Professor (
+    id_professor INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    disciplina VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Cursos (
+    id_curso INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    carga_horaria INT NOT NULL, 
+    preco DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE Alunos (
+    id_aluno INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    data_nascimento DATE NOT NULL,
+    cpf VARCHAR(14) NOT NULL,
+    curso VARCHAR(100) NOT NULL
+);
+
+INSERT INTO Cursos (nome, carga_horaria, preco) VALUES 
+('Banco de Dados MySQL', 40, 299.90),
+('Desenvolvimento Web', 80, 599.00),
+('Lógica de Programação', 30, 199.90);
+
+INSERT INTO Professor (nome, disciplina) VALUES 
+('Carlos Silva', 'Banco de Dados'),
+('Ana Souza', 'Desenvolvimento Web'),
+('Marcos Lima', 'Lógica de Programação');
+
+INSERT INTO Alunos (nome, data_nascimento, cpf, curso) VALUES 
+('João Pedro', '2000-05-15', '123.456.789-00', 'Banco de Dados MySQL'),
+('Maria Clara', '1999-10-20', '987.654.321-11', 'Desenvolvimento Web'),
+('Lucas Gabriel', '2002-03-10', '456.789.123-22', 'Lógica de Programação'),
+('Beatriz Santos', '2001-12-05', '789.123.456-33', 'Desenvolvimento Web');
+
+SELECT * FROM Alunos 
+WHERE curso = 'Desenvolvimento Web';
+SELECT * FROM Cursos 
+WHERE preco < 300.00;
+SELECT * FROM Professor 
+WHERE disciplina LIKE '%Banco de Dados%';
